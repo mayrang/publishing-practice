@@ -1,6 +1,6 @@
-import Loading from "./components/Loading";
+import Keyframes from "./components/keyframes/Keyframes";
 
-export const routePaths = ["/", "/loading", "/publishing1"] as const;
+export const routePaths = ["/", "/keyframes", "/publishing1"] as const;
 
 export type ROUTE_PATH = (typeof routePaths)[number];
 
@@ -29,15 +29,15 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
   },
   "/publishing1": {
     key: "/publishing1",
-    link: "/loading",
+    link: "/keyframes",
     name: "퍼블리싱 연습1",
-    children: ["/loading"],
+    children: ["/keyframes"],
   },
-  "/loading": {
-    key: "/loading",
-    link: "/loading",
-    name: "로딩 애니메이션",
-    children: Loading,
+  "/keyframes": {
+    key: "/keyframes",
+    link: "/keyframes",
+    name: "keyframes",
+    children: Keyframes,
   },
 };
 

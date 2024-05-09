@@ -1,0 +1,126 @@
+.section {
+  margin: 50px 0;
+}
+
+.section h1 {
+  font-size: 22px;
+}
+
+.container {
+  display: flex;
+
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 30px;
+}
+
+.square {
+  margin: 30px;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.square span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+  animation: rotateSquare 3s infinite linear;
+  transition: 0.5;
+}
+
+.square:hover span {
+  background-color: crimson;
+  border: none;
+}
+
+.square:hover span:nth-of-type(2) {
+  opacity: 0.7;
+}
+
+.square:hover span:nth-of-type(3) {
+  opacity: 0.5;
+}
+
+.square span:nth-of-type(2) {
+  animation-duration: 5s;
+  animation-direction: reverse;
+}
+.square span:nth-of-type(3) {
+  animation-duration: 8s;
+}
+
+.square2 {
+  margin: 30px;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.square2 span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+  animation: rotateSquare 3s infinite linear;
+  transition: 0.5;
+}
+
+.square2:hover span {
+  border: none;
+}
+
+.square2:hover span:nth-of-type(1) {
+  background-color: gold;
+  opacity: 0.3;
+}
+
+.square2:hover span:nth-of-type(2) {
+  background-color: dodgerblue;
+  opacity: 0.5;
+}
+
+.square2:hover span:nth-of-type(3) {
+  background-color: crimson;
+}
+
+.square2 span:nth-of-type(2) {
+  animation-duration: 5s;
+  animation-direction: reverse;
+}
+
+.square2 span:nth-of-type(3) {
+  animation-delay: 7s;
+}
+
+@keyframes rotateSquare {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+.content p {
+  font-size: 14px;
+  margin-top: 14px;
+}
+
+.content h2 {
+  font-size: 18px;
+}

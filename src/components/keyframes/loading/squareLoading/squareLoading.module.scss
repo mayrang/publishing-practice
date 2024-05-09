@@ -1,0 +1,59 @@
+.container {
+  width: 50px;
+  height: 50px;
+
+  margin: 50px 0;
+  position: relative;
+}
+
+.container span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  left: 0;
+  position: absolute;
+
+  animation: square 1.5s infinite;
+}
+
+.container span:nth-of-type(1) {
+  background-color: dodgerblue;
+  animation-delay: 0s;
+}
+
+.container span:nth-of-type(2) {
+  background-color: gold;
+  animation-delay: 0.8s;
+}
+@keyframes square {
+  0% {
+    top: 0;
+    left: 0;
+    background-color: dodgerblue;
+  }
+
+  25% {
+    top: 0;
+    left: calc(100% - 15px);
+    background-color: crimson;
+  }
+
+  50% {
+    top: calc(100% - 15px);
+    left: calc(100% - 15px);
+    background-color: gold;
+  }
+
+  75% {
+    top: calc(100% - 15px);
+    left: 0;
+    background-color: green;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    background-color: dodgerblue;
+  }
+}
