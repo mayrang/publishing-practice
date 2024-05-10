@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  margin: 32px;
+  div {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    color: white;
+    transition: 0.5s;
+    padding: 20px;
+    padding-top: 40px;
+    box-sizing: border-box;
+  }
+}
+
+.container:hover div {
+  opacity: 1;
+}

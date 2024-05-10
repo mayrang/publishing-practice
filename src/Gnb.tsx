@@ -10,7 +10,7 @@ function ParentRouteItem({ route, currentPath }: { route: ParentRoute; currentPa
         <Link href={route.link} className="parentLink">
           {route.name}
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_1_360)">
+            <g clipPath="url(#clip0_1_360)">
               <path
                 d="M17 9L12 14L7 9"
                 stroke="#333333"
