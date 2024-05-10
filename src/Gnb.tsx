@@ -1,35 +1,15 @@
 "use client";
 import { useParams } from "next/navigation";
-import {
-  ChildRoute,
-  ParentRoute,
-  ROUTE,
-  ROUTE_PATH,
-  gnbRootList,
-  isParentRoute,
-  routes,
-} from "./routes";
+import { ChildRoute, ParentRoute, ROUTE, ROUTE_PATH, gnbRootList, isParentRoute, routes } from "./routes";
 import Link from "next/link";
 import cls from "classnames";
-function ParentRouteItem({
-  route,
-  currentPath,
-}: {
-  route: ParentRoute;
-  currentPath: ROUTE_PATH;
-}) {
+function ParentRouteItem({ route, currentPath }: { route: ParentRoute; currentPath: ROUTE_PATH }) {
   return (
     <div className="parentContainer">
       <div>
         <Link href={route.link} className="parentLink">
           {route.name}
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1_360)">
               <path
                 d="M17 9L12 14L7 9"
@@ -49,38 +29,22 @@ function ParentRouteItem({
         </Link>
       </div>
       {route.children?.map((r) => (
-        <GnbItem route={routes[r]} currentPath={currentPath} />
+        <GnbItem key={r} route={routes[r]} currentPath={currentPath} />
       ))}
     </div>
   );
 }
 
-function ChildrenRouteItem({
-  route,
-  currentPath,
-}: {
-  route: ChildRoute;
-  currentPath: ROUTE_PATH;
-}) {
+function ChildrenRouteItem({ route, currentPath }: { route: ChildRoute; currentPath: ROUTE_PATH }) {
   return (
-    <Link
-      href={route.link}
-      className={cls("childrenLink", { current: currentPath === route.link })}
-    >
+    <Link href={route.link} className={cls("childrenLink", { current: currentPath === route.link })}>
       {route.name}
     </Link>
   );
 }
 
-function GnbItem({
-  route,
-  currentPath,
-}: {
-  route: ROUTE;
-  currentPath: ROUTE_PATH;
-}) {
-  if (isParentRoute(route))
-    return <ParentRouteItem route={route} currentPath={currentPath} />;
+function GnbItem({ route, currentPath }: { route: ROUTE; currentPath: ROUTE_PATH }) {
+  if (isParentRoute(route)) return <ParentRouteItem route={route} currentPath={currentPath} />;
   return <ChildrenRouteItem route={route} currentPath={currentPath} />;
 }
 

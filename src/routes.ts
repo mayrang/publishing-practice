@@ -1,6 +1,7 @@
+import Hover from "./components/hover/Hover";
 import Keyframes from "./components/keyframes/Keyframes";
 
-export const routePaths = ["/", "/keyframes", "/publishing1"] as const;
+export const routePaths = ["/", "/keyframes", "/publishing1", "/hover"] as const;
 
 export type ROUTE_PATH = (typeof routePaths)[number];
 
@@ -31,7 +32,7 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: "/publishing1",
     link: "/keyframes",
     name: "퍼블리싱 연습1",
-    children: ["/keyframes"],
+    children: ["/keyframes", "/hover"],
   },
   "/keyframes": {
     key: "/keyframes",
@@ -39,11 +40,14 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     name: "keyframes",
     children: Keyframes,
   },
+  "/hover": {
+    key: "/hover",
+    link: "/hover",
+    name: "가상클래스 hover",
+    children: Hover,
+  },
 };
 
-export const isParentRoute = (route: ROUTE): route is ParentRoute =>
-  Array.isArray(route.children);
+export const isParentRoute = (route: ROUTE): route is ParentRoute => Array.isArray(route.children);
 
-export const gnbRootList = (routes["/"] as ParentRoute).children.map(
-  (r) => routes[r]
-);
+export const gnbRootList = (routes["/"] as ParentRoute).children.map((r) => routes[r]);
