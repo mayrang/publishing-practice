@@ -1,0 +1,45 @@
+.container {
+  margin: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// absolute를 주면 display inline-block
+// left: 50% 하고 transform translateX(-50%) 이런식으로 하면 부모요소 크기와 상관없이 가운데 정렬
+// absolute가 부모요소에 있으면 relative처럼 인식하기도 함
+// visibilty hidden 와 diplay none : 둘 다 존재가 사라지지만 hidden은 영역은 남아 있음 그렇기 때문에 transition이 가능
+.icon {
+  position: relative;
+  span {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: black;
+    border-radius: 3px;
+    width: 230px;
+    padding: 10px;
+    height: 50px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+  span:after {
+    content: "";
+    top: calc(100% - 5px);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: black;
+  }
+}
+
+.icon:hover span {
+  opacity: 1;
+  visibility: visible;
+}
