@@ -2,6 +2,7 @@ import React from "react";
 import Dropdown from "./dropdown/Dropdown";
 import Overlay from "./overlay/Overlay";
 import Tooltip from "./tooltip/Tooltip";
+import HoverGnb from "./hovergnb/HoverGnb";
 
 export default function Hover() {
   return (
@@ -9,6 +10,7 @@ export default function Hover() {
       <Dropdown />
       <Overlay />
       <Tooltip />
+      <HoverGnb />
     </div>
   );
 }
