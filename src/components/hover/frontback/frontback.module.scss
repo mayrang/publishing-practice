@@ -1,0 +1,20 @@
+.item {
+  position: relative;
+  width: 200px;
+  height: 200px;
+
+  .front {
+    position: absolute;
+    z-index: 1;
+    width: inherit;
+    height: inherit;
+    top: 0;
+  }
+
+  .back {
+    top: 0;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+  }
+}
