@@ -3,6 +3,7 @@ import Dropdown from "./dropdown/Dropdown";
 import Overlay from "./overlay/Overlay";
 import Tooltip from "./tooltip/Tooltip";
 import HoverGnb from "./hovergnb/HoverGnb";
+import FrontBack from "./frontback/FrontBack";
 
 export default function Hover() {
   return (
@@ -11,6 +12,7 @@ export default function Hover() {
       <Overlay />
       <Tooltip />
       <HoverGnb />
+      <FrontBack />
     </div>
   );
 }
